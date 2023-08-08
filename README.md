@@ -1,15 +1,15 @@
 local WorkspacePlayers = game:GetService("Workspace").Game.Players;
 local Players = game:GetService('Players');
 local localplayer = Players.LocalPlayer;
--- semicolon but cool :sunglasses:
+-- semicolon but cool :black_large_square:
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/9Strew/roblox/main/proc/jans"))()
 local Esp = loadstring(game:HttpGet("https://raw.githubusercontent.com/9Strew/roblox/main/proc/kiriotesp"))()
-Esp.Enabled = false
-Esp.Tracers = false
-Esp.Boxes = false
+Esp.Enabled = true
+Esp.Tracers = true
+Esp.Boxes = true
 
-local Window = Library:CreateWindow("🧟🎃 Evade", Vector2.new(500, 300), Enum.KeyCode.RightShift)
+local Window = Library:CreateWindow("VOIZHuB Evade", Vector2.new(500, 300), Enum.KeyCode.RightShift)
 local Evade = Window:CreateTab("General")
 local AutoFarms = Window:CreateTab("Farms")
 local Gamee = Window:CreateTab("Game")
@@ -27,31 +27,21 @@ local World = Gamee:CreateSector("World", "left")
 getgenv().Settings = {
     moneyfarm = false,
     afkfarm = false,
-    NoCameraShake = false,
-    Downedplayeresp = false,
-    AutoRespawn = false,
-    TicketFarm = false,
+    NoCameraShake = true,
+    Downedplayeresp = true,
+    AutoRespawn = true,
     Speed = 1450,
     Jump = 3,
     reviveTime = 3,
     DownedColor = Color3.fromRGB(255,0,0),
-    PlayerColor = Color3.fromRGB(255,170,0),
+    PlayerColor = Color3.fromRGB(0),
 
     stats = {
         TicketFarm = {
             earned = nil,
             duration = 0
         },
-
-        TokenFarm = {
-            earned = nil,
-            duration = 0
-        }
-
-    }
-}
-
-
+	
 local WalkSpeed = EvadeSector:AddSlider("Speed", 1450, 1450, 12000, 100, function(Value)
     Settings.Speed = Value
 end)
@@ -135,7 +125,7 @@ Visuals:AddColorpicker("Player Color", Color3.fromRGB(255,170,0), function(Color
     Settings.PlayerColor = Color
 end)
 
-Visuals:AddColorpicker("Downed Player Color", Color3.fromRGB(255,255,255), function(Color)
+Visuals:AddColorpicker("Downed Player Color", Color3.fromRGB(0), function(Color)
     Settings.DownedColor = Color
 end)
 
